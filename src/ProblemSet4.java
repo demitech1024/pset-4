@@ -72,7 +72,7 @@ public class ProblemSet4 {
                 sum += i;
             }
         }
-        System.out.printf("\n%d.\n", sum);
+        System.out.printf("\n%,d.\n", sum);
     }
     
     /*
