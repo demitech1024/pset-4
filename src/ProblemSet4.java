@@ -55,7 +55,7 @@ public class ProblemSet4 {
         int lowerBound;
         int upperBound;
         int sum = 0;
-        System.out.println("");
+        System.out.println();
         do {
             System.out.print("Enter lower bound: ");
             lowerBound = in.nextInt();
@@ -111,6 +111,19 @@ public class ProblemSet4 {
      */
     
     public void digits() {
+        int posInt;
+        int sum = 0;
+        System.out.println();
+        do {
+            System.out.print("Positive integer: ");
+            posInt = in.nextInt();
+            in.nextLine();
+        } while (posInt <= 0);
+        String intStr = Integer.toString(posInt);
+        for (int i = intStr.length() - 1; i >= 0; i--) {
+            sum += (Character.getNumericValue(intStr.charAt(i)) % 2 == 1) ? Character.getNumericValue(intStr.charAt(i)) : 0;
+        }
+        System.out.printf("\n%,d.\n", sum);
 
     }
     
