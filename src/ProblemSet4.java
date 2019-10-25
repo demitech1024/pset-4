@@ -136,7 +136,21 @@ public class ProblemSet4 {
      */
     
     public void average() {
-
+        int sum = 0;
+        int userInt;
+        int count = 0;
+        System.out.println();
+        do {
+            System.out.print("Non-negative integer: ");
+            userInt = in.nextInt();
+            in.nextLine();
+            if (userInt >= 0) {
+                sum += userInt;
+                count++;
+            }
+        } while (userInt >= 0);
+        double average = (double) sum / count;
+        System.out.printf("\n%,.2f.\n", average);
     }
     
     /*
