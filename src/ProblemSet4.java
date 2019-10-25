@@ -83,6 +83,23 @@ public class ProblemSet4 {
      */
     
     public void reverse() {
+        int posInt;
+        System.out.println();
+        do {
+            System.out.print("Positive Integer: ");
+            posInt = in.nextInt();
+            in.nextLine();
+        } while (posInt <= 0);
+        String intStr = Integer.toString(posInt);
+        String reversed = "";
+        for (int i = intStr.length() - 1; i >= 0; i--) {
+            if (i == 0) {
+                reversed = reversed + intStr.charAt(i) + ".";
+            } else {
+                reversed = reversed + intStr.charAt(i) + ", ";
+            }
+        }
+        System.out.printf("\n%s\n", reversed);
 
     }
     
