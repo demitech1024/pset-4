@@ -255,7 +255,19 @@ public class ProblemSet4 {
      */
     
     public void mario() {        
-
+        int height = 0;
+        System.out.println();
+        do {
+            System.out.print("Height: ");
+            height = in.nextInt();
+            in.nextLine();
+        } while (height < 1 || height > 24);
+        System.out.println();
+        int length = height + 1;
+        for (int i = 2; i <= length; i++) {
+            System.out.print(new String(new char[length - i]).replace("\0", " "));
+            System.out.println(new String(new char[i]).replace("\0", "#"));
+        }
     }
     
     /*
@@ -266,7 +278,21 @@ public class ProblemSet4 {
      */
     
     public void luigi() {
-
+        int height = 0;
+        System.out.println();
+        do {
+            System.out.print("Height: ");
+            height = in.nextInt();
+            in.nextLine();
+        } while (height < 1 || height > 24);
+        System.out.println();
+        int length = height + 1;
+        for (int i = 2; i <= length; i++) {
+            System.out.print(new String(new char[length - i]).replace("\0", " "));
+            System.out.print(new String(new char[i]).replace("\0", "#"));
+            System.out.print("  ");
+            System.out.println(new String(new char[i]).replace("\0", "#"));
+        }
     }
     
     /*
