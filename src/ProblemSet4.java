@@ -214,6 +214,64 @@ public class ProblemSet4 {
      */
     
     public void credit() {
+        System.out.println();
+        System.out.print("Number: ");
+        String creditCard = in.next();
+        in.nextLine();
+        int cardLength = creditCard.length();
+        int sum = 0;
+        String[] digits = creditCard.split("");
+        for (int i = cardLength - 2; i >= 0; i = i - 2) {
+            int tempInt = Integer.parseInt(digits[i]) * 2;
+            String tempStr = String.valueOf(tempInt);
+            for (int j = 0; j < tempStr.length(); j++) {
+                sum += Integer.parseInt(String.valueOf(tempStr.charAt(j)));
+            }
+        }
+
+        for (int i = cardLength - 1; i >= 0; i = i - 2) {
+            sum += Integer.parseInt(digits[i]);
+        }
+
+        String output = "";
+        String firstTwo = digits[0] + digits[1];
+        if (sum % 10 == 0) {
+            switch (cardLength) {
+        
+                case 15:
+                    if (firstTwo.equals("34") || firstTwo.equals("37")) {
+                        output = "Amex.";
+                    } else {
+                        output = "Invalid.";
+                    }
+                    break;
+            
+                case 16:
+                    if (digits[0].equals("4")) {
+                        output = "Visa.";
+                    } else if (Integer.parseInt(firstTwo) >= 51 && Integer.parseInt(firstTwo) <= 55) {
+                        output = "Mastercard.";
+                    } else {
+                        output = "Invalid.";
+                    }
+                    break;
+            
+                case 13:
+                    if (digits[0].equals("4")) {
+                        output = "Visa.";
+                    } else {
+                        output = "Invalid.";
+                    }
+                    break;
+            
+                default:
+                    output = "Invalid.";
+                    break;
+            }
+        } else {
+            output = "Invalid.";
+        }
+        System.out.printf("\n%s\n\n", output);
         
     }
 }
