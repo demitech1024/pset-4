@@ -16,7 +16,9 @@
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
 
+import java.util.Arrays;
 import java.util.Scanner;
+import java.lang.Math;
 
 public class ProblemSet4 {
     
@@ -222,6 +224,26 @@ public class ProblemSet4 {
      */
     
     public void factors() {
+        int userInput;
+        System.out.println();
+        do {
+            System.out.print("Positive integer: ");
+            userInput = in.nextInt();
+            in.nextLine();
+        } while (userInput < 1);
+
+        String output = "";
+        for (int i = 1; i <= userInput; i++) {
+            if (userInput % i == 0) {
+                if (i == 1) {
+                    output = "1, " + String.valueOf(userInput);
+                } else {
+                    output += ", " + String.valueOf(i) + ", " + String.valueOf(userInput / i);
+                }
+            }
+        }
+        output = output.substring(0, ((output.length() / 2) - 1));
+        System.out.printf("\n%s.\n", output);
 
     }
     
