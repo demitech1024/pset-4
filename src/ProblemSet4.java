@@ -160,7 +160,29 @@ public class ProblemSet4 {
      */
     
     public void prime() {
-
+        System.out.println();
+        int userInt;
+        do {
+            System.out.print("Non-negative integer: "); 
+            userInt = in.nextInt();
+            in.nextLine();
+        } while (userInt <= 0);
+        boolean isPrime = false;
+        String output = "";
+        if (userInt == 0 || userInt == 1) {
+            output = "Not prime.";
+        } else {
+            for (int i = 2; i <= userInt; i++) {
+                if (userInt % i == 0 && i != userInt) {
+                    output = "Not prime.";
+                    break;
+                } else {
+                    output = "Prime.";
+                }
+            }
+        }
+        System.out.printf("\n%s\n", output);
+        
     }
     
     /*
