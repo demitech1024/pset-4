@@ -193,7 +193,26 @@ public class ProblemSet4 {
      */
     
     public void fibonacci() {
-
+        int userInput;
+        System.out.println();
+        do {
+            System.out.print("Positive integer: ");
+            userInput = in.nextInt();
+            in.nextLine();
+        } while (userInput < 1 || userInput > 92);
+        long firstNum = 0;
+        long secondNum = 1;
+        long fibNum = 0;
+        for (int i = 1; i <= userInput; i++) {
+            if (i == 1) {
+                fibNum = secondNum;
+            } else {
+                fibNum = firstNum + secondNum;
+                firstNum = secondNum;
+                secondNum = fibNum;
+            }
+        }
+        System.out.printf("\n%,d.\n", fibNum);
     }
     
     /*
